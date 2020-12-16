@@ -22,8 +22,8 @@ public class Main {
         sdf.saveUser(name3,"shree", (byte) 8);
         System.out.println("User с именем – " + name3 + " добавлен в базу данных");
         List<User> sddsgs = sdf.getAllUsers();
-        System.out.println(sddsgs); //должен быть переопределен toString в классе User
+        System.out.println(sddsgs.toString()); //должен быть переопределен toString в классе User
         sdf.createUsersTable();
-        sdf.dropUsersTable();
+        //sdf.dropUsersTable();
     }
 }

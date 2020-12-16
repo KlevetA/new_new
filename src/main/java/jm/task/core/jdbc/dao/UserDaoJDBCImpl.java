@@ -16,11 +16,10 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
 
-
     public void createUsersTable() {
         Connection newConnect = new Util().getConnection();
-        String queryCreateUser = "create table if not exists USER ( id int null,   name int null," +
-                "    lastName varchar(200) null,    age int null , constraint user_pk   primary key (id))";
+        String queryCreateUser = "create table if not exists USER ( id int primary key auto_increment,   name varchar(200) null," +
+                "    lastName varchar(200) null,    age int null )";
 
         try {
             Statement statCreUs = newConnect.createStatement();
@@ -58,9 +57,8 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void saveUser(String name, String lastName, byte age) {
         Connection newConnect = new Util().getConnection();
-        long id = 1; // чето придумать как генерить id
 
-        String dropUsersTable = "insert into user values (\'" + id + "\',\'" + name + "\',\'" + lastName + "\',\'" + age + "\')";
+        String dropUsersTable = "insert into user (name,lastName,age ) values (\'" + name + "\',\'" + lastName + "\',\'" + age + "\')";
 
         try {
             Statement statCreUs = newConnect.createStatement();

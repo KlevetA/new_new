@@ -24,7 +24,7 @@ public class User {
 
     @Override
     public String toString(){
-        String q = getId() + getName() + getLastName() + getAge() + "дядядя";
+        String q = getId() + " " +getName() + " " +getLastName() + " " +getAge() + "дядядя";
         return q;
     }
 
